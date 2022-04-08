@@ -7,7 +7,8 @@ function stringify(data) {
 }
 
 const findAllUsers = async () => {
-  // Find all users
+  const result = await User.findAll()
+  stringify(result)
   // Raw SQL: SELECT * FROM users;
 }
 
