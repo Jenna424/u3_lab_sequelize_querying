@@ -26,7 +26,10 @@ const createNewUser = async () => {
 }
 
 const deleteWhere = async () => {
-  // Delete everyone named "Jane"
+  const result = await User.destroy({
+    where: { firstName: 'Jane' }
+  })
+  stringify(result)
   // Raw SQL: DELETE FROM users WHERE firstName = 'Jane'
 }
 
