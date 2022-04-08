@@ -51,6 +51,8 @@ const findUsersOnlyEmail = async () => {
 }
 
 const findAllJohns = async () => {
+  const result = await User.findAll({ where: { firstName: 'John' } })
+  stringify(result)
   // Find all users where firstname is John
   // Raw SQL: SELECT * FROM users WHERE firstName = "John";
 }
