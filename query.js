@@ -13,7 +13,15 @@ const findAllUsers = async () => {
 }
 
 const createNewUser = async () => {
-  // Create a new user
+  const result = await User.create({
+    firstName: 'Jane',
+    lastName: 'Doe',
+    email: 'jane@jane.com',
+    userName: 'janedoe',
+    password: '123456789',
+    jobTitle: 'Systems Analyst'
+  })
+  stringify(result)
   // Raw SQL: INSERT INTO users (id, firstName, lastName, email, userName, password, jobTitle) VALUES (DEFAULT, 'Jane', 'Doe', 'jane@jane.com', 'janedoe', '123456789', 'Systems Analyst')
 }
 
