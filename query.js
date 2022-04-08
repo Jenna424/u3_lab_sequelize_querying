@@ -60,6 +60,10 @@ const findAllJohns = async () => {
 const findJohnOrJane = async () => {
   // Find all users where firstname is either John or Jane
   // Raw SQL: SELECT * FROM users WHERE firstName = "John" OR firstName = "Jane";
+  const result = await User.findAll({
+    where: { [Op.or]: [{ firstName: 'John' }, { firstName: 'Jane' }] }
+  })
+  stringify(result)
 }
 
 const run = async () => {
