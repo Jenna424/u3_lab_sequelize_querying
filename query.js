@@ -44,6 +44,8 @@ const updateUser = async () => {
 }
 
 const findUsersOnlyEmail = async () => {
+  const result = await User.findAll({ attributes: ['email'] })
+  stringify(result)
   // Find all users and only show their email
   // Raw SQL: SELECT email FROM users;
 }
