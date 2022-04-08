@@ -35,6 +35,11 @@ const deleteWhere = async () => {
 
 const updateUser = async () => {
   // Change lastname "Doe" to "Smith"
+  const result = await User.update(
+    { lastName: 'Smith' },
+    { where: { lastName: 'Doe' } }
+  )
+  stringify(result)
   // UPDATE users SET lastName='Smith' WHERE lastName = 'Doe'
 }
 
